@@ -1,9 +1,10 @@
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-    const supabase = createClient()
+    const supabase = createAdminClient()
 
+    // 1. Seed Opportunities
     const dummyJobs = [
         {
             title: 'Junior Software Engineer',
@@ -57,11 +58,28 @@ export async function GET() {
         }
     ]
 
-    const { error } = await supabase.from('opportunities').insert(dummyJobs)
+    const { error: insertError } = await supabase.from('opportunities').insert(dummyJobs)
 
-    if (error) {
-        return NextResponse.json({ error: error.message }, { status: 500 })
+    if (insertError) {
+        return NextResponse.json({ error: `Insert Error: ${insertError.message}` }, { status: 500 })
     }
 
-    return NextResponse.json({ message: 'Seeded successfully' })
+    // 2. Create Test User
+    const { data: user, error: userError } = await supabase.auth.admin.createUser({
+        email: 'test@kazilink.com',
+        password: 'password123',
+        email_confirm: true
+    })
+
+    if (userError) {
+        console.error('User creation error (might already exist):', userError.message)
+    }
+
+    return NextResponse.json({
+        message: 'Seeded successfully',
+        testUser: {
+            email: 'test@kazilink.com',
+            password: 'password123'
+        }
+    })
 }
