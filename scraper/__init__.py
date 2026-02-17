@@ -1,0 +1,7 @@
+"""
+KaziLink Scraper - __init__.py
+Main package initialization
+"""
+
+__version__ = "1.0.0"
+__author__ = "KaziLink Team"
