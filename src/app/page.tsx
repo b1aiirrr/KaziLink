@@ -58,12 +58,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="text-3xl">📊</div>
+              <img src="/logo.png" alt="KaziLink" className="h-10 w-auto" />
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold text-white">
                   KaziLink
                 </h1>
-                <p className="text-slate-400 text-xs">Your ladder to success</p>
+                <p className="text-orange-400 text-xs font-medium">Your ladder to success</p>
               </div>
             </div>
 
@@ -82,14 +82,14 @@ export default function HomePage() {
       {/* Hero section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             From Student to{' '}
-            <span className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
               Professional
             </span>
           </h2>
-          <p className="text-xl text-slate-300 mb-4 max-w-3xl mx-auto">
-            Discover attachments, internships, and entry-level jobs curated specifically for Kenyan students and graduates.
+          <p className="text-lg md:text-xl text-slate-300 mb-4 max-w-2xl mx-auto leading-relaxed">
+            Discover attachments, internships, and jobs curated for Kenyan students and graduates.
           </p>
           <div className="flex items-center justify-center space-x-2 text-slate-400 text-sm">
             <TrendingUp className="w-4 h-4" />
