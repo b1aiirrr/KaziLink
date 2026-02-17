@@ -16,10 +16,6 @@
     --orange-600: #E74C3C;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-slate-950 text-slate-100;
   }
@@ -67,6 +63,7 @@ html {
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
