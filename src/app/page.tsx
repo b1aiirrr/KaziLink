@@ -68,12 +68,16 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <button className="px-4 py-2 text-white hover:text-orange-400 transition-colors">
-                Sign In
-              </button>
-              <button className="px-6 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all">
-                Get Started
-              </button>
+              <Link href="/login">
+                <button className="px-4 py-2 text-white hover:text-orange-400 transition-colors">
+                  Sign In
+                </button>
+              </Link>
+              <Link href="/signup">
+                <button className="px-6 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all">
+                  Get Started
+                </button>
+              </Link>
             </div>
           </div>
         </div>
